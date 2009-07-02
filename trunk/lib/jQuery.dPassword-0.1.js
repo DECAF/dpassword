@@ -82,7 +82,7 @@
             clearTimeout(checker[getId($(this).attr('id'))]);
          });
 
-			check(getId($(this).attr('id')), '', true);
+			setTimeout("check('" + id + "', '', true);", opts.interval);
       });
 
       getId = function(id) {
@@ -107,7 +107,7 @@
          $('#' + id).val(tmp);
       }
       
-      check = function(id, oldValue, intialCall) {
+      check = function(id, oldValue, initialCall) {
          var bullets = $('#' + opts.prefix + id).val();
 
          if (oldValue != bullets) {
@@ -130,7 +130,7 @@
          	$('#debug_' + opts.prefix + id).text($('#' + id).val());
          }
          if (!initialCall) {
-	         checker[id] = setTimeout("check('" + id + "', '" + $('#' + opts.prefix + id).val() + "')", opts.interval);
+	         checker[id] = setTimeout("check('" + id + "', '" + $('#' + opts.prefix + id).val() + "', false)", opts.interval);
 			}
       }
       
