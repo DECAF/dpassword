@@ -28,6 +28,8 @@
       var timer   = new Array();
 
       $(this).each(function() {
+         if (opts.debug) console.log('init [' + $(this).attr('id') + ']');
+
          // get original password tag values
          var name        = $(this).attr('name');
          var id          = $(this).attr('id');
@@ -75,10 +77,12 @@
 
          // bind event
          $('#' + opts.prefix + id).bind('focus', function(event) {
+            if (opts.debug) console.log('event: focus [' + getId($(this).attr('id')) + ']');
             clearTimeout(checker[getId($(this).attr('id'))]);
-            checker[getId($(this).attr('id'))] = setTimeout("check('" + getId($(this).attr('id')) + "', '', true)", opts.interval);
+            checker[getId($(this).attr('id'))] = setTimeout("check('" + getId($(this).attr('id')) + "', '')", opts.interval);
          });
          $('#' + opts.prefix + id).bind('blur', function(event) {
+            if (opts.debug) console.log('event: blur [' + getId($(this).attr('id')) + ']');
             clearTimeout(checker[getId($(this).attr('id'))]);
          });
 
@@ -95,6 +99,8 @@
       }
    
       setPassword = function(id, str) {
+         if (opts.debug) console.log('setPassword: [' + id + ']');
+
          var tmp = '';
          for (i=0; i < str.length; i++) {
             if (str.charAt(i) == unescape(opts.replacement)) {
@@ -108,6 +114,8 @@
       }
       
       check = function(id, oldValue, initialCall) {
+         if (opts.debug) console.log('check: [' + id + ']');
+         
          var bullets = $('#' + opts.prefix + id).val();
 
          if (oldValue != bullets) {
