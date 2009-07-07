@@ -5,10 +5,12 @@
  *     Feel free to redistribute or modify this script, as long
  *     as you leave this copyright disclaimer at the top
  *
- * Known Bugs: - delete marked text will not work
- *             - deleting a single chars will not work if char is 
- *               not the last char
- *             - view will not follow cursor if textfield is too small
+ * Known Issues: - delete marked text will not work
+ *               - deleting a single chars will not work if char is 
+ *                 not the last char
+ *               - view will not follow cursor if textfield is too small
+ *               - if id based styles are assigned, these styles will 
+ *                 not be taken over
  *
  *******************************************************************************/
 
