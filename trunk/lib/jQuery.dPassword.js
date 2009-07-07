@@ -36,7 +36,7 @@
    $.fn.dPassword = function(options) {
 
       var defaults = {
-         interval:      200,
+         interval:      100,
          duration:      3000,
          replacement:   '%u25CF',
          prefix:        'password_',
