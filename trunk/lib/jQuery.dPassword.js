@@ -53,7 +53,7 @@
          // get original password tag values
          var name        = $(this).attr('name');
          var id          = $(this).attr('id');
-         var class       = $(this).attr('class');
+         var cssclass    = $(this).attr('class');
          var style       = $(this).attr('style');
          var size        = $(this).attr('size');
          var maxlength   = $(this).attr('maxlength');
@@ -78,7 +78,7 @@
                                  'id="' +  (opts.prefix + id) + '" ' + 
                                'type="text" ' +
                               'value="' + value + '" ' +
-               (class != '' ? 'class="' + class + '"' : '') +
+               (cssclass != '' ? 'class="' + cssclass + '"' : '') +
                (style != '' ? 'style="' + style + '"' : '') +
                  (size != '' ? 'size="' + size + '"' : '') +
        (maxlength != -1 ? 'maxlength="' + maxlength + '"' : '') +
