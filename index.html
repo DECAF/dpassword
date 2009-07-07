@@ -18,11 +18,11 @@
 			<input type="submit" name="submit2" value="show password" id="submit2" onclick="alert('fieldname: ' + $('#password2').attr('name') + '\npassword value: '+ $('#password2').val()); return false;"/>
 		</form>
 	
-		<script type="text/javascript" src="lib/jQuery-1.3.2.js"></script>
-		<script type="text/javascript" src="lib/jQuery.dPassword-0.1.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/jQuery.dPassword.js"></script>
 		<script type="text/javascript">
-			$(document).ready( function() {
-				$('input:password').dPassword();
+			jQuery(document).ready( function() {
+				jQuery('input:password').dPassword();
 			});
 		</script>
 	</body>
