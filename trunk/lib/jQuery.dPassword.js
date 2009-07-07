@@ -1,5 +1,5 @@
 /*******************************************************************************
- * dPassword v0.1b - jQuery password-hiding iPhone-Style
+ * dPassword v0.1 - jQuery delayed password masking (iPhone style)
  *
  * (c) copyright 2009 by DECAF°, Stefan Ullrich (http://decaf.de)
  *     Feel free to redistribute or modify this script, as long
