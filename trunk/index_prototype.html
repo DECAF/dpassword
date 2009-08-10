@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>dPassword Demo (Prototype version) - Delayed Password Masking</title>
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="screen.css" />
+	</head>
+
+	<body>
+		<div class="content">
+			<h1>dPassword Demo (Prototype version) - Delayed Password Masking</h1>
+			<div class="c1">
+
+
+				<!-- form example -->
+
+				<form action="#">
+					<label for="password">Type in a password:</label>
+					<input type="password" name="password" id="password" value="" size="25" style="padding: 5px; border: 2px solid #ddd;"/>&nbsp;&nbsp;
+					<input type="submit" name="submit2" value="submit" id="submit2"/>
+				</form>
+
+
+			</div>
+			<div class="c2">
+				<p>Password is:</p>
+				<code id="showpassword"></code>
+			</div>
+			<div class="clear"></div>
+			<p><a href="http://code.google.com/p/dpassword/">Project repository</a> | <a href="http://decaf.de/dpassword">Related blog entry</a> | <a href="index.html">jQuery plugin version</a></p>
+		</div>
+
+
+		<!-- load Prototype -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
+
+		<!-- load dPassword script -->
+		<script type="text/javascript" src="lib/prototype.dPassword.js" charset="utf-8"></script>
+
+		<!-- add delayed masking function to password fields -->
+		<script type="text/javascript">
+		
+			document.observe("dom:loaded", function() {
+
+				// create dPasswords
+				$$('input[type=password]').each(function(field) {
+									
+					$('showpassword').update($F(field));
+					
+					new dPassword(field, {
+						showToggleIcon: true,
+						onChange: function(value) {
+							$('showpassword').update(value);
+						},
+						onStateChange: function(state) {
+							if (window.console) console.info("dPassword has been turned ", state ? "on" : "off");
+						}
+					});
+				});
+				
+			});
+			
+		</script>
+
+	</body>
+</html>
