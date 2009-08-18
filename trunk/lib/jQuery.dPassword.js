@@ -19,7 +19,9 @@
  *
  * Licensed under MIT License.
  *
- * Copyright (c) 2009 DECAF°, Julian Dreissig (http://decaf.de)
+ * Copyright (c) 2009 Stefan Ullrich, DECAF° | http://decaf.de
+ *                    Dirk Schürjohann, DECAF° | http://decaf.de
+ *                    Julian Dreissig
  *
  * Permission is hereby granted, free of charge, to any person obtaining 
  * a copy of this software and associated documentation files (the "Software"), 
@@ -261,7 +263,7 @@
 			
 			// update field
 			newInput.css('width', (_input.get(0).clientWidth - 2*parseInt(_input.get(0).currentStyle.padding, 10)) + "px");
-			newInput.css('height' (_input.get(0).clientHeight - 2*parseInt(_input.get(0).currentStyle.padding, 10)) + "px"); // fix different widths for password and text inputs in IE
+			newInput.css('height', (_input.get(0).clientHeight - 2*parseInt(_input.get(0).currentStyle.padding, 10)) + "px"); // fix different widths for password and text inputs in IE
 			var oldInput = _input;
 			oldInput.get(0).replaceNode(newInput.get(0));	// jQuery's replaceWith method gobbles the event handlers, apparently.
 			_input = newInput;
